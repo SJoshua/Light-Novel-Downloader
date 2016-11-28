@@ -3,18 +3,6 @@
 -- By Joshua
 -- At 2013-03-11 12:21:19
 ----------------------------------
--- ±¾¹¤¾ßÓÉ°µÓ°¤ÎÉ­Èí¼ş¹¤×÷ÊÒ(http://srkf.tk)¿ª·¢
--- ¿ª·¢Õß Ô¼ĞŞÑÇ_RK
-----------------------------------
--- °æÈ¨ÉùÃ÷
-----------------------------------
--- ±¾¹¤¾ßÎª×ÔÓÉÈí¼ş¡£°µÓ°¤ÎÉ­°æÈ¨ËùÓĞ¡£
--- ¸ù¾İ×ÔÓÉÈí¼şÔ­Ôò£¬ÔÊĞí¶ş´Î·¢²¼£¬µ«ÊÇ±ØĞëÍ¬Ñù¿ªÔ´¡£²»µÃĞŞ¸Ä°æÈ¨ÉùÃ÷¡£
--- ËùÏÂÔØµÄ×ÊÔ´À´Ô´×ÔÇáÖ®¹ú¶ÈÏÂÊôÇáÖ®ÔÚÏß(lknovel.lightnovel.cn)¡£
--- ×ÊÔ´ - ÇáÖ®ÔÚÏß°æÈ¨ËùÓĞ¡£
-----------------------------------
--- Tips: ¸Ã¹¤¾ßÖ»ÄÜÔËĞĞÓÚWindowsÏÂ£¬²»Ö§³Ö¿çÆ½Ì¨¡£
-----------------------------------
 local luacom=require("luacom")
 local iconv=require("iconv")
 local lfs=require("lfs")
@@ -94,22 +82,22 @@ function tfbox(msg)
 		io.write("\t#",v..(" "):rep(Max-#v),"#\n")
 	end
 	io.write("\t#\t\t\t\t\t\t#\n\t#\t\t ")
-	pgreen("> ÊÇ")
-	io.write("        ·ñ\t\t\t#\n")
+	pgreen("> æ˜¯")
+	io.write("        å¦\t\t\t#\n")
 	io.write("\t=================================================\n")
 	local mouse="left"
 	while true do
 		local key=lcon.getch()
 		if key==75 then
 			lcon.gotoXY(25,3)
-			pgreen("> ÊÇ")
-			io.write("        ·ñ")
+			pgreen("> æ˜¯")
+			io.write("        å¦")
 			mouse="left"
 		elseif key==77 or key==27 then
 			lcon.gotoXY(25,3)
-			io.write("  ÊÇ")
+			io.write("  æ˜¯")
 			lcon.gotoXY(35,3)
-			pgreen("> ·ñ")
+			pgreen("> å¦")
 			mouse="right"
 		elseif key==13 then
 			return mouse=="left"
@@ -170,7 +158,7 @@ function msgbox(msg)
 		msg=msg:sub(e+1,#msg)
 	end
 	io.write(msg)
-	pgreen("> È·ÈÏ\n")
+	pgreen("> ç¡®è®¤\n")
 	while lcon.getch()~=13 do
 	end
 end 
@@ -182,22 +170,22 @@ end
 function main(t)
 	local id
 	db.picid=0
-	local res=selectbox("\t--- »¶Ó­Ê¹ÓÃÇáÖ®ÔÚÏß×ÊÔ´ÏÂÔØÆ÷ ---\n\n\t\t=== ²Ëµ¥ ===\n\n",
-		{"ÏÂÔØÒ»¸öÏµÁĞ",
-		 "ÏÂÔØÒ»±¾Ğ¡Ëµ",
-		 "ÏÂÔØÒ»¸öÕÂ½Ú",
-		 "°æÈ¨ĞÅÏ¢",
-		 "ÍË³ö³ÌĞò"
+	local res=selectbox("\t--- æ¬¢è¿ä½¿ç”¨è½»ä¹‹åœ¨çº¿èµ„æºä¸‹è½½å™¨ ---\n\n\t\t=== èœå• ===\n\n",
+		{"ä¸‹è½½ä¸€ä¸ªç³»åˆ—",
+		 "ä¸‹è½½ä¸€æœ¬å°è¯´",
+		 "ä¸‹è½½ä¸€ä¸ªç« èŠ‚",
+		 "ç‰ˆæƒä¿¡æ¯",
+		 "é€€å‡ºç¨‹åº"
 		})
 	if res==1 then
 		while not id do
 			cls()
-			io.write("ÇëÊäÈëÏµÁĞ±àºÅ¡£\n\t -- Tip:\n\t¾ÙÀı¡¶µ¶½£ÉñÓò¡·£¬¸ÃÏµÁĞµØÖ·Îª\n\t\thttp://lknovel.lightnovel.cn/main/vollist/83.html\n\tÔòÆäÏµÁĞ±àºÅÎª83¡£ÏµÁĞ±àºÅÖ»ÄÜÎªÊı×Ö¡£\n\n\t")
+			io.write("è¯·è¾“å…¥ç³»åˆ—ç¼–å·ã€‚\n\t -- Tip:\n\tä¸¾ä¾‹ã€Šåˆ€å‰‘ç¥åŸŸã€‹ï¼Œè¯¥ç³»åˆ—åœ°å€ä¸º\n\t\thttp://lknovel.lightnovel.cn/main/vollist/83.html\n\tåˆ™å…¶ç³»åˆ—ç¼–å·ä¸º83ã€‚ç³»åˆ—ç¼–å·åªèƒ½ä¸ºæ•°å­—ã€‚\n\n\t")
 			id=tonumber(io.read())
 		end
-		db.flag=tfbox("[ÄãÒªÏÂÔØÍ¼Æ¬Âğ£¿]")
+		db.flag=tfbox("[ä½ è¦ä¸‹è½½å›¾ç‰‡å—ï¼Ÿ]")
 		if db.flag then
-			db.ppic=tfbox("[Í¼Æ¬Òª·Ö±ğ´æ·ÅÂğ£¿]")
+			db.ppic=tfbox("[å›¾ç‰‡è¦åˆ†åˆ«å­˜æ”¾å—ï¼Ÿ]")
 		end
 		db.sta=res
 		cls()
@@ -205,25 +193,25 @@ function main(t)
 	elseif res==2 then
 		while not id do
 			cls()
-			io.write("ÇëÊäÈëĞ¡Ëµ±àºÅ¡£\n\t -- Tip:\n\t¾ÙÀı¡¶µ¶½£ÉñÓò¡¤µÚÒ»²¿¡·£¬¸ÃĞ¡ËµµØÖ·Îª\n\t\thttp://lknovel.lightnovel.cn/main/book/161.html\n\tÔòÆäĞ¡Ëµ±àºÅÎª161¡£Ğ¡Ëµ±àºÅÖ»ÄÜÎªÊı×Ö¡£\n\n\t")
+			io.write("è¯·è¾“å…¥å°è¯´ç¼–å·ã€‚\n\t -- Tip:\n\tä¸¾ä¾‹ã€Šåˆ€å‰‘ç¥åŸŸÂ·ç¬¬ä¸€éƒ¨ã€‹ï¼Œè¯¥å°è¯´åœ°å€ä¸º\n\t\thttp://lknovel.lightnovel.cn/main/book/161.html\n\tåˆ™å…¶å°è¯´ç¼–å·ä¸º161ã€‚å°è¯´ç¼–å·åªèƒ½ä¸ºæ•°å­—ã€‚\n\n\t")
 			id=tonumber(io.read())
 		end
-		db.flag=tfbox("[ÄãÒªÏÂÔØÍ¼Æ¬Âğ£¿]")
+		db.flag=tfbox("[ä½ è¦ä¸‹è½½å›¾ç‰‡å—ï¼Ÿ]")
 		db.sta=res
 		cls()
 		return download(res,id)
 	elseif res==3 then
 		while not id do
 			cls()
-			io.write("ÇëÊäÈëÕÂ½Ú±àºÅ¡£\n\t -- Tip:\n\t¾ÙÀı¡¶µ¶½£ÉñÓò¡¤µÚÒ»²¿¡·¡¤ĞòÕÂ£¬¸ÃÕÂ½ÚµØÖ·Îª\n\t\thttp://lknovel.lightnovel.cn/main/view/1062.html\n\tÔòÆäÕÂ½Ú±àºÅÎª1062¡£ÕÂ½Ú±àºÅÖ»ÄÜÎªÊı×Ö¡£\n\n\t")
+			io.write("è¯·è¾“å…¥ç« èŠ‚ç¼–å·ã€‚\n\t -- Tip:\n\tä¸¾ä¾‹ã€Šåˆ€å‰‘ç¥åŸŸÂ·ç¬¬ä¸€éƒ¨ã€‹Â·åºç« ï¼Œè¯¥ç« èŠ‚åœ°å€ä¸º\n\t\thttp://lknovel.lightnovel.cn/main/view/1062.html\n\tåˆ™å…¶ç« èŠ‚ç¼–å·ä¸º1062ã€‚ç« èŠ‚ç¼–å·åªèƒ½ä¸ºæ•°å­—ã€‚\n\n\t")
 			id=tonumber(io.read())
 		end
-		db.flag=tfbox("[ÄãÒªÏÂÔØÍ¼Æ¬Âğ£¿]")
+		db.flag=tfbox("[ä½ è¦ä¸‹è½½å›¾ç‰‡å—ï¼Ÿ]")
 		db.sta=res
 		cls()
 		return download(res,id)
 	elseif res==4 then
-		msgbox("\t\t       === °æÈ¨ĞÅÏ¢ ===\n\t\t\t¿ª·¢ - Ô¼ĞŞÑÇ_RK\n\t\t\t³öÆ· - °µÓ°Èí¼ş ({srkf.tk})\n\t\t\t×ÊÔ´ - ÇáÖ®ÔÚÏß ({lknovel.lightnovel.cn})\n\n\t\tÉùÃ÷: ±¾¹¤¾ßÎª×ÔÓÉÈí¼ş£¬ÔÊĞíĞŞ¸ÄÔ´´úÂë²¢ÇÒ¶ş´Î·¢²¼£¬\n\t\t      µ«²»ÔÊĞí¸ü¸Ä°æÈ¨ĞÅÏ¢(°üÀ¨Ô´´úÂëÖĞµÄ)£¬\n\t\t      Í¬Ê±¶ş´Î·¢²¼Ê±±ØĞëÍ¬Ñù¿ªÔ´¡£\n\n\t\t\t    ")
+		msgbox("\t\t       === ç‰ˆæƒä¿¡æ¯ ===\n\t\t\tå¼€å‘ - çº¦ä¿®äºš_RK\n\t\t\tå‡ºå“ - æš—å½±è½¯ä»¶ ({srkf.tk})\n\t\t\tèµ„æº - è½»ä¹‹åœ¨çº¿ ({lknovel.lightnovel.cn})\n\n\t\tå£°æ˜: æœ¬å·¥å…·ä¸ºè‡ªç”±è½¯ä»¶ï¼Œå…è®¸ä¿®æ”¹æºä»£ç å¹¶ä¸”äºŒæ¬¡å‘å¸ƒï¼Œ\n\t\t      ä½†ä¸å…è®¸æ›´æ”¹ç‰ˆæƒä¿¡æ¯(åŒ…æ‹¬æºä»£ç ä¸­çš„)ï¼Œ\n\t\t      åŒæ—¶äºŒæ¬¡å‘å¸ƒæ—¶å¿…é¡»åŒæ ·å¼€æºã€‚\n\n\t\t\t    ")
 		return main()
 	elseif res==5 then
 		return os.exit()
@@ -252,12 +240,12 @@ function download(id,key)
 	if id==1 then
 		local res=get(id,key)
 		if res:find("<title> %-  %- ") then
-			io.write("´íÎó - ÏµÁĞ²»´æÔÚ¡£")
+			io.write("é”™è¯¯ - ç³»åˆ—ä¸å­˜åœ¨ã€‚")
 			os.execute("pause")
 			return main()
 		end
 		db.path=togbk:iconv(res:match("<li class=\"active\">(.-)</li>")):gsub("[:%*\\/<>|%?\"]",""):match("^%s*(.-)%s*$")
-		io.write("ÕıÔÚ×¥È¡ÏµÁĞ¡º",db.path,"¡»\n")
+		io.write("æ­£åœ¨æŠ“å–ç³»åˆ—ã€",db.path,"ã€\n")
 		os.execute("@mkdir \""..db.path.."\"")
 		if not db.ppic and db.flag then
 			os.execute("@mkdir \""..db.path.."\\pic\"")
@@ -265,18 +253,18 @@ function download(id,key)
 		for i in res:gmatch("<h2 class=\"ft%-24\">(.-)</h2>") do
 			download(2,i:match("<a href=\"http://lknovel%.lightnovel%.cn/main/book/(%d+).html\">"))
 		end
-		io.write("ÏµÁĞ¡º",db.path,"¡»ÏÂÔØÍê±Ï\n\n")
+		io.write("ç³»åˆ—ã€",db.path,"ã€ä¸‹è½½å®Œæ¯•\n\n")
 		os.execute("pause")
 		return main()
 	elseif id==2 then
 		local res=get(id,key)
 		if not res then
-			io.write("´íÎó - Ğ¡Ëµ²»´æÔÚ¡£")
+			io.write("é”™è¯¯ - å°è¯´ä¸å­˜åœ¨ã€‚")
 			os.execute("pause")
 			return main()
 		end
 		db.unit=togbk:iconv(res:match("<title>.-%- (.-) %-").." - "..res:match("<li class=\"active\">(.-)</li>")):gsub("[:%*\\/<>|%?\"]",""):match("^%s*(.-)%s*$")
-		io.write("ÕıÔÚ×¥È¡Ğ¡Ëµ¡º",db.unit,"¡»\n")
+		io.write("æ­£åœ¨æŠ“å–å°è¯´ã€",db.unit,"ã€\n")
 		if db.ppic then 
 			db.picid=0
 		end
@@ -292,7 +280,7 @@ function download(id,key)
 		for i in res:gmatch("<li class=\"span3\">(.-)</li>") do
 			download(3,i:match("<a href=\"http://lknovel%.lightnovel%.cn/main/view/(%d+).html\""))
 		end
-		io.write("Ğ¡Ëµ¡º",db.unit,"¡»ÏÂÔØÍê±Ï\n")
+		io.write("å°è¯´ã€",db.unit,"ã€ä¸‹è½½å®Œæ¯•\n")
 		if sta==2 then
 			io.write("\n")
 			os.execute("pause")
@@ -301,18 +289,18 @@ function download(id,key)
 	elseif id==3 then
 		local res=get(id,key)
 		if res:find("<a href=\"/main/vollist/%.html\">") then
-			io.write("´íÎó - ÕÂ½Ú²»´æÔÚ¡£")
+			io.write("é”™è¯¯ - ç« èŠ‚ä¸å­˜åœ¨ã€‚")
 			os.execute("pause")
 			return main()
 		end
 		local res=res:match("<div id=\"J_view\" class=\"mt%-20\">(.-)<div class=\"text%-center mt%-20\">")
 		db.page=togbk:iconv(res:match("<h3 align=\"center\" class=\"ft%-20\">(.-)</h3>")):gsub("[:%*\\/<>|%?\"]",""):match("^%s*(.-)%s*$")
-		io.write("ÕıÔÚÏÂÔØÕÂ½Ú¡º",db.page,"¡»\n")
+		io.write("æ­£åœ¨ä¸‹è½½ç« èŠ‚ã€",db.page,"ã€\n")
 		local f=io.open(getpath(),"w")
 		f:write(fmtext(res))
 		f:close()
 		if sta==2 then
-			io.write("ÕÂ½Ú¡º"..db.page.."¡»ÏÂÔØÍê±Ï\n\n")
+			io.write("ç« èŠ‚ã€"..db.page.."ã€ä¸‹è½½å®Œæ¯•\n\n")
 			os.execute("pause")
 			return main()
 		end
@@ -333,7 +321,7 @@ function get(c,n)
 	a,b=pcall(ajax.send,ajax)
 	if not a then
 		cls()
-		io.write("ÍøÂç´íÎó£¬Çë¼ì²éÍøÂçÁ¬½Ó¡£")
+		io.write("ç½‘ç»œé”™è¯¯ï¼Œè¯·æ£€æŸ¥ç½‘ç»œè¿æ¥ã€‚")
 		os.execute("pause")
 		return main()
 	end
@@ -373,7 +361,7 @@ function fmtext(t)
 			s:write(get(4,i))
 			s:close()
 			t=t:gsub("<img.->","[pic "..db.picid.."]",1)
-			io.write("¡ºÍ¼",db.picid,"¡»ÏÂÔØÍê³É\n")
+			io.write("ã€å›¾",db.picid,"ã€ä¸‹è½½å®Œæˆ\n")
 		end
 	end
 	t=t:gsub("<h2.->",""):gsub("<h3.->",""):gsub("<a.->",""):gsub("<h2.->",""):gsub("<img.->",""):gsub("<div.->",""):gsub("</.->",""):gsub("<br.->",""):gsub("<i.->",""):gsub("<hr.->","")
@@ -384,6 +372,6 @@ end
 -- By Joshua
 -- At 2013-03-11 19:34:45
 ----------------------------------
-os.execute("title ÇáÖ®ÔÚÏß×ÊÔ´ÏÂÔØÆ÷")
+os.execute("title è½»ä¹‹åœ¨çº¿èµ„æºä¸‹è½½å™¨")
 lfs.mkdir("pic")
 main()
