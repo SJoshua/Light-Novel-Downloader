@@ -1,5 +1,10 @@
 # Light-Novel-Downloader
-A tool to download light novels on http://lknovel.lightnovel.cn/ (No longer available)
+A spider for lightnovel (http://lknovel.lightnovel.cn/).
+
+## Requirement
+* iconv
+* lcon
 
 ## Usage
-Follow the console, it's easy to use. (But no longer available.)
+No longer available.
+
