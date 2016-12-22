@@ -211,7 +211,7 @@ function main(t)
 		cls()
 		return download(res,id)
 	elseif res==4 then
-		msgbox("\t\t       === 版权信息 ===\n\t\t\t开发 - 约修亚_RK\n\t\t\t出品 - 暗影软件 ({srkf.tk})\n\t\t\t资源 - 轻之在线 ({lknovel.lightnovel.cn})\n\n\t\t声明: 本工具为自由软件，允许修改源代码并且二次发布，\n\t\t      但不允许更改版权信息(包括源代码中的)，\n\t\t      同时二次发布时必须同样开源。\n\n\t\t\t    ")
+		msgbox("\t\t       === 版权信息 ===\n\t\t\t开发 - SJoshua\n\t\t\t资源 - 轻之在线 ({lknovel.lightnovel.cn})\n\t\t\t请支持正版 - 这只是练手用的爬虫")
 		return main()
 	elseif res==5 then
 		return os.exit()
